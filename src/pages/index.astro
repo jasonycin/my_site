@@ -1,10 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header/Header.astro';
+import landingSVG from '../assets/landing_bg.svg'
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
+   	<div class="absolute inset-0 -z-20 bg-cover bg-no-repeat bg-center" style={`background-image: url('${landingSVG['src']}');`}></div>
+    
+    <Header/>
     <p class="text-3xl">Hi there! Check back later, I am hard at work constructing this page.</p>
 </Layout>

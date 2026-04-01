@@ -1,0 +1,30 @@
+---
+const year = 'MMXXV'
+---
+
+<div class="copyright font-black">
+    <p>&copy; {year} Jason LaPierre</p>
+</div>
+
+<style is:global>
+    .copyright {
+        position: fixed;
+        left: -30px;
+        bottom: 80px; /* Adjust for positioning above page edge */
+        transform: rotate(-90deg);
+        font-size: 12px; /* Adjust size as needed */
+        color: #393939; /* Set to desired color */
+        font-family: "Futura LT", sans-serif; /* Matches your font stack */
+        z-index: 100; /* Ensure it's on top of other elements */
+        pointer-events: none; /* Prevents interaction to keep it non-intrusive */
+    }
+
+    .copyright::after {
+        content: "";
+        display: block;
+        width: 100%; /* Adjust to desired line length */
+        height: 1px; /* Adjust for thickness */
+        background-color: #393939; /* Matches text color */
+        margin: 0 auto 5px; /* Center line and space from text */
+    }
+</style>

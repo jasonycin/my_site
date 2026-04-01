@@ -1,6 +1,7 @@
 ---
 import Head from "../components/Head.astro";
 import '../styles/globals.css';
+import Copyright from "../components/copyright/Copyright.astro";
 ---
 
 <!doctype html>
@@ -16,6 +17,9 @@ import '../styles/globals.css';
 	<body>
 		<slot />
 	</body>
+	<footer>
+		<Copyright/>
+	</footer>
 </html>
 
 <style>
