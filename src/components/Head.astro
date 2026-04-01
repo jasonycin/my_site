@@ -1,0 +1,15 @@
+---
+const { title = "Jason LaPierre", ...props } = Astro.props;
+---
+<link rel="sitemap" href="/sitemap-index.xml">
+<title>{title}</title>
+<meta name="description" content="Welcome to my new Astro site!">
+
+<!-- Web analytics -->
+<script data-goatcounter="https://my-account.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<!-- Open Graph tags -->
+<meta property="og:title" content="Jason LaPierre" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://jasonlapie.com/" />
+<meta property="og:description" content="Come take a look!" />
