@@ -1,13 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header/Header.astro';
-import landingSVG from '../assets/landing_bg.svg'
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from '@components/header/Header.astro';
+import landingSVG from '../assets/landing_bg.svg';
+import AboutMe from '@components/about-me/AboutMe.astro';
 ---
 
 <Layout>
-   	<div class="absolute inset-0 -z-20 bg-cover bg-no-repeat bg-center" style={`background-image: url('${landingSVG['src']}');`}></div>
-    <Header/>
+
+    <section class="relative min-h-screen overflow-hidden">
+        <Header />
+        <div class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+             style={`background-image: url('${landingSVG.src}');`}
+        ></div>
+
+        <div class="relative z-10 flex min-h-screen items-center justify-center px-6">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-black">Welcome</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative z-10">
+        <AboutMe />
+    </section>
 </Layout>
