@@ -44,3 +44,9 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+
+## Attribution
+
+
+<a href="https://www.flaticon.com/free-icons/scroll-down" title="scroll down icons">Scroll down icons created by BomSymbols - Flaticon</a>
