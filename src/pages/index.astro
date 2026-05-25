@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header/Header.astro';
 import landingSVG from '../assets/landing_bg.svg';
+import noiseSVG from '../assets/noise.svg';
 import AboutMe from '@components/about-me/AboutMe.astro';
 import ScrolldownHint from '@components/scrolldown-hint/ScrolldownHint.astro';
 ---
@@ -11,8 +12,12 @@ import ScrolldownHint from '@components/scrolldown-hint/ScrolldownHint.astro';
     <section class="relative max-h-screen overflow-hidden">
         <Header />
         
-        <div class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+        <div class="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat"
              style={`background-image: url('${landingSVG.src}');`}
+        ></div>
+
+        <div class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+             style={`background-image: url('${noiseSVG.src}');`}
         ></div>
 
         <div class="relative z-10 flex min-h-screen items-center justify-center px-6">
