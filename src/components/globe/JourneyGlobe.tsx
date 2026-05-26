@@ -95,6 +95,9 @@ export default function JourneyGlobe() {
                 ref={globeRef}
                 width={size.width}
                 height={size.height}
+                rendererConfig={{ alpha: true }} // give alpha channel to make background transparent
+                backgroundColor="transparent"
+                backgroundImageUrl={undefined}
                 globeImageUrl="/globe/blue_marble.jpg"
                 showGlobe={false}
                 showAtmosphere={false}
