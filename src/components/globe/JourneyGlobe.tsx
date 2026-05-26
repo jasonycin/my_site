@@ -1,6 +1,7 @@
 import Globe from 'react-globe.gl';
 import React, {useEffect, useRef, useState} from 'react';
 import type {GlobeInstance} from "globe.gl";
+import * as THREE from "three";
 
 type CountryFeature = {
     type: "Feature";
@@ -10,6 +11,7 @@ type CountryFeature = {
         coordinates: number[][][] | number[][][][];
     };
 };
+
 
 export default function JourneyGlobe() {
     const globeRef = useRef<any>(null);
@@ -81,6 +83,31 @@ export default function JourneyGlobe() {
         controls.enableZoom = false;
     }, []);
 
+    const sideMatRef = useRef(
+        new THREE.MeshBasicMaterial({
+            // If you want a yellow fill:
+            color: new THREE.Color('#ffea00'),
+            transparent: true,
+            opacity: 1,
+            // push the polygon surface slightly back so the stroke can render on top
+            polygonOffset: true,
+            polygonOffsetFactor: 1,
+            polygonOffsetUnits: 1,
+            depthWrite: true
+        })
+    );
+
+    const capMatRef = useRef(
+        new THREE.MeshBasicMaterial({
+            color: new THREE.Color('rgba(0,0,0,0.02)'),
+            transparent: true,
+            opacity: 0.02,
+            polygonOffset: true,
+            polygonOffsetFactor: 1,
+            polygonOffsetUnits: 1,
+            depthWrite: true
+        })
+    );
 
     return(
         <div
@@ -95,12 +122,10 @@ export default function JourneyGlobe() {
                 ref={globeRef}
                 width={size.width}
                 height={size.height}
-                rendererConfig={{ alpha: true }} // give alpha channel to make background transparent
-                backgroundColor="transparent"
-                backgroundImageUrl={undefined}
                 globeImageUrl="/globe/blue_marble.jpg"
                 showGlobe={false}
                 showAtmosphere={false}
+                backgroundColor="rgba(0,0,0,0)"
                 polygonsData={[countries, USTerritories].flat()}
                 polygonCapColor={() => "rgba(0, 0, 0, 0.02)"}
                 polygonSideColor={() => "rgba(0, 0, 0, 0.00)"}
