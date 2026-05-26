@@ -5,21 +5,25 @@ import DNA from './dna.png';
 import { Image } from 'astro:assets';
 ---
 
-<div class="m-3 flex md:flex-row md:gap-y-0 gap-y-2 flex-col justify-between">
-    <a href="/public" class="logo uppercase font-bold text-4xl tracking-widest">
+<div class="m-3 flex flex-col lg:flex-row gap-y-2 justify-center lg:justify-between items-center">
+    <a href="/public" class="logo uppercase font-bold text-4xl tracking-widest text-center lg:text-left">
         <span>Jason LaPierre</span>
     </a>
 
-    <div class="flex flex-row gap-3 -m-1 ">
+    <div class="flex flex-row flex-wrap sm:flex-row gap-3 -m-1 tracking-wider justify-center lg:justify-end items-center">
         <a href="https://www.linkedin.com/in/jason-lapie/" target="_blank">
-            <Image src={LinkedIn} alt="LinkedIn" class="w-10 h-10" />
+            <span class="flex flex-row gap-1 items-center">
+                <Image src={LinkedIn} alt="LinkedIn" class="w-8 h-8" /> LinkedIn
+            </span>
         </a>
         <a href="https://github.com/jasonycin/" target="_blank">
-            <Image src={Github} alt="Github" class="w-10 h-10 " />
+            <span class="flex flex-row gap-1 items-center">
+                <Image src={Github} alt="Github" class="w-8 h-8 " /> Github
+            </span>
         </a>
         <a href="https://katarzynatyc.github.io/people/#:~:text=MS%20Students-,Jason%20LaPierre,-%2C%20Spatial%20Microbiome%20Profiling" target="_blank">
             <span class="flex flex-row gap-1 items-center">
-                <Image src={DNA} alt="Research" class="w-10 h-10 " />
+                <Image src={DNA} alt="Research" class="w-7 h-7 " /> Research
             </span>
 
         </a>
