@@ -9,14 +9,14 @@ import ScrolldownHint from '@components/scrolldown-hint/ScrolldownHint.astro';
 
 <Layout>
 
-    <section class="relative max-h-screen overflow-hidden">
+    <section class="relative max-h-screen overflow-hidden isolate">
         <Header />
         
-        <div class="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat"
+        <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
              style={`background-image: url('${landingSVG.src}');`}
         ></div>
 
-        <div class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+        <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
              style={`background-image: url('${noiseSVG.src}');`}
         ></div>
 
