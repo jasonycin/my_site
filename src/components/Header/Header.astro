@@ -1,7 +1,7 @@
 ---
 import Github from './icons8-github.svg';
 import LinkedIn from './icons8-linkedin.svg';
-import DNA from './dna.png';
+import DNA from './dna.svg';
 import { Image } from 'astro:assets';
 ---
 
@@ -10,7 +10,7 @@ import { Image } from 'astro:assets';
         <span>Jason LaPierre</span>
     </a>
 
-    <div class="flex flex-row flex-wrap sm:flex-row gap-3 -m-1 tracking-wider justify-center lg:justify-end items-center">
+    <div class="flex flex-row flex-wrap sm:flex-row gap-3 -m-1 tracking-wider justify-center lg:justify-end items-center text-[#393939]">
         <a href="https://www.linkedin.com/in/jason-lapie/" target="_blank">
             <span class="flex flex-row gap-1 items-center">
                 <Image src={LinkedIn} alt="LinkedIn" class="w-8 h-8" /> LinkedIn
@@ -23,7 +23,7 @@ import { Image } from 'astro:assets';
         </a>
         <a href="https://katarzynatyc.github.io/people/#:~:text=MS%20Students-,Jason%20LaPierre,-%2C%20Spatial%20Microbiome%20Profiling" target="_blank">
             <span class="flex flex-row gap-1 items-center">
-                <Image src={DNA} alt="Research" class="w-7 h-7 " /> Research
+                <Image src={DNA} alt="Research" class="w-8 h-8 fill-[#393939] text-[#393939]"/> Research
             </span>
 
         </a>
