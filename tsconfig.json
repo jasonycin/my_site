@@ -18,6 +18,9 @@
       ],
       "@assets/*": [
         "./src/assets/*"
+      ],
+      "@shadcn/*": [
+        "./src/components/components/ui/*"
       ]
     },
     "jsx": "react-jsx",

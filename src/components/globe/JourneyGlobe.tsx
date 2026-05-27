@@ -5,6 +5,9 @@ import * as THREE from "three";
 import { DUDELDORF_WILLIAMSBURG_ARC } from "@components/globe/Arc.ts";
 import {cursor} from "sisteransi";
 import show = cursor.show;
+import { Checkbox } from "@shadcn/checkbox"
+import { Field, FieldGroup, FieldLabel } from "@shadcn/field"
+
 
 type CountryFeature = {
     type: "Feature";
@@ -108,6 +111,7 @@ export default function JourneyGlobe() {
     );
 
     return(
+        <div>
         <div
             ref={containerRef}
             className="relative flex w-full items-center justify-center overflow-hidden"
@@ -138,9 +142,20 @@ export default function JourneyGlobe() {
                 polygonAltitude={0.0}
             />
         </div>
-
-        // checkbox to set state of showGlobe
-
+            <FieldGroup className="mx-auto w-56">
+                <Field orientation="horizontal">
+                    <Checkbox
+                        name={"show-globe-checkbox"}
+                        id={"show-globe-checkbox"}
+                        checked={showGlobe}
+                        onCheckedChange={setShowGlobe as any}
+                    />
+                    <FieldLabel htmlFor="terms-checkbox-basic">
+                        Show globe
+                    </FieldLabel>
+                </Field>
+            </FieldGroup>
+        </div>
 
     );
 }
