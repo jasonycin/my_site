@@ -3,6 +3,8 @@ import React, {useEffect, useRef, useState} from 'react';
 import type {GlobeInstance} from "globe.gl";
 import * as THREE from "three";
 import { DUDELDORF_WILLIAMSBURG_ARC } from "@components/globe/Arc.ts";
+import {cursor} from "sisteransi";
+import show = cursor.show;
 
 type CountryFeature = {
     type: "Feature";
@@ -13,18 +15,20 @@ type CountryFeature = {
     };
 };
 
+const MAP_CENTER = { lat: 44.92548, lng: -34.79551, altitude: 2 };
 
 export default function JourneyGlobe() {
     const globeRef = useRef<any>(null);
     const containerRef = useRef<HTMLDivElement | null>(null);
 
-    const [size, setSize] = useState({
-        width: 800,
-        height: 520,
-    });
-
+    const [size, setSize] = useState({ width: 800, height: 520 });
     const [countries, setCountries] = useState<CountryFeature[]>([]);
     const [USTerritories, setUSTerritories] = useState<CountryFeature[]>([]);
+    const [showGlobe, setShowGlobe] = useState(false);
+
+    function handleShowGlobeToggle(e: React.ChangeEvent<HTMLInputElement>) {
+        setShowGlobe(e.target.checked);
+    }
 
     useEffect(() => {
         if (!containerRef.current) return;
@@ -68,19 +72,12 @@ export default function JourneyGlobe() {
         renderer.domElement.style.background = 'transparent';
 
         // Camera positioning.
-        globe.pointOfView(
-            {
-                lat: 35,
-                lng: -45,
-                altitude: 2.4,
-            },
-            0
-        );
+        globe.pointOfView(MAP_CENTER, 2000);
 
         // auto-rotate, but gently
         const controls = globe.controls();
         controls.autoRotate = true;
-        controls.autoRotateSpeed = 0.35;
+        controls.autoRotateSpeed = 0.02;
         controls.enableZoom = false;
     }, []);
 
@@ -131,7 +128,7 @@ export default function JourneyGlobe() {
                 arcDashLength={0.4}
                 arcDashGap={1}
                 arcDashAnimateTime={5000}
-                showGlobe={false}
+                showGlobe={showGlobe}
                 showAtmosphere={false}
                 backgroundColor="rgba(0,0,0,0)"
                 polygonsData={[countries, USTerritories].flat()}
@@ -141,5 +138,9 @@ export default function JourneyGlobe() {
                 polygonAltitude={0.0}
             />
         </div>
+
+        // checkbox to set state of showGlobe
+
+
     );
 }
