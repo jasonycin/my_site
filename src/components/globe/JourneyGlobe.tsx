@@ -2,6 +2,7 @@ import Globe from 'react-globe.gl';
 import React, {useEffect, useRef, useState} from 'react';
 import type {GlobeInstance} from "globe.gl";
 import * as THREE from "three";
+import { DUDELDORF_WILLIAMSBURG_ARC } from "@components/globe/Arc.ts";
 
 type CountryFeature = {
     type: "Feature";
@@ -123,6 +124,13 @@ export default function JourneyGlobe() {
                 width={size.width}
                 height={size.height}
                 globeImageUrl="/globe/blue_marble.jpg"
+                arcsData={[DUDELDORF_WILLIAMSBURG_ARC]}
+                arcLabel={() => "Germany → Williamsburg"}
+                arcColor={"color"}
+                arcStroke={1}
+                arcDashLength={0.4}
+                arcDashGap={1}
+                arcDashAnimateTime={5000}
                 showGlobe={false}
                 showAtmosphere={false}
                 backgroundColor="rgba(0,0,0,0)"
@@ -130,7 +138,7 @@ export default function JourneyGlobe() {
                 polygonCapColor={() => "rgba(0, 0, 0, 0.02)"}
                 polygonSideColor={() => "rgba(0, 0, 0, 0.00)"}
                 polygonStrokeColor={() => "rgba(0, 0, 0, 0.95)"}
-                polygonAltitude={0.3}
+                polygonAltitude={0.0}
             />
         </div>
     );
