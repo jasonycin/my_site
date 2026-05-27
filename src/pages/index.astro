@@ -5,6 +5,7 @@ import landingSVG from '../assets/landing_bg.svg';
 import noiseSVG from '../assets/noise.svg';
 import AboutMe from '@components/about-me/AboutMe.astro';
 import ScrolldownHint from '@components/scrolldown-hint/ScrolldownHint.astro';
+import JourneyGlobe from '../components/globe/JourneyGlobe.tsx';
 ---
 
 <Layout>
@@ -32,6 +33,6 @@ import ScrolldownHint from '@components/scrolldown-hint/ScrolldownHint.astro';
     </section>
 
     <section class="relative z-10 hidden">
-        <AboutMe />
+        <JourneyGlobe client:only="react"/>
     </section>
 </Layout>
