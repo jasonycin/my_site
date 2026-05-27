@@ -29,9 +29,6 @@ export default function JourneyGlobe() {
     const [USTerritories, setUSTerritories] = useState<CountryFeature[]>([]);
     const [showGlobe, setShowGlobe] = useState(false);
 
-    function handleShowGlobeToggle(e: React.ChangeEvent<HTMLInputElement>) {
-        setShowGlobe(e.target.checked);
-    }
 
     useEffect(() => {
         if (!containerRef.current) return;
